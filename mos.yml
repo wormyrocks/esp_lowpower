@@ -1,8 +1,9 @@
 version: "1.0"
 arch: esp32
 author: mongoose-os
-description: An empty app that does nothing
+description: App to test deep sleep modes
 mongoose_os_version: ${mos_version}
+libs_version: ${mos_version}
 sources:
 - src
 filesystem:
@@ -10,13 +11,20 @@ filesystem:
 extra_files: []
 ffi_symbols: []
 libs:
-- origin: https://github.com/mongoose-os-libs/i2c
-- origin: https://github.com/mongoose-os-libs/rpc-service-config
-- origin: https://github.com/mongoose-os-libs/rpc-service-fs
-- origin: https://github.com/mongoose-os-libs/rpc-uart
-- origin: https://github.com/mongoose-os-libs/rpc-service-gpio
-- origin: https://github.com/mongoose-os-libs/wifi
-- name: mylib
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-service-i2c
+  - origin: https://github.com/mongoose-os-libs/rpc-service-ota
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/spi
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/vfs-dev-spi-flash
+  - name: mylib
 config_schema: []
 build_vars: {}
 cflags: []
@@ -24,7 +32,7 @@ cxxflags: []
 cdefs: {}
 tags:
 - c
-libs_version: ${mos_version}
+- js
 modules_version: ${mos_version}
 conds: []
 manifest_version: ""
