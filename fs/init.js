@@ -1,6 +1,6 @@
 load('api_gpio.js');
 load('api_timer.js');
-load('api_deepsleep.js');
+load('api_lowpower.js');
 
 let led=17;
 let print_from_c = ffi('void print_from_c(void)');
@@ -21,7 +21,7 @@ GPIO.set_button_handler(0, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 200, function() {
   }
   timer_id = Timer.set(5000, false, function() {
     print("I've seen things you people wouldn't believe. Attack ships on fire off the shoulder of Orion.\nI watched C-beams glitter in the dark near the Tannhauser Gate.\nAll those moments will be lost in time, like tears in rain.\nTime to die.\n");
-    ESP32_DeepSleep.deepSleepExt0(0,0);
+    lowpower.deepSleepExt0(0,0);
   }, null);
 }, null);
 
