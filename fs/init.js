@@ -41,7 +41,7 @@ GPIO.set_button_handler(button, GPIO.PULL_UP, GPIO.INT_EDGE_NEG, 200, function()
     print("Time to die.");
 
     // wake on touch
-    lowpower.wakeOnTouch(4);
+    lowpower.wakeOnTouch(0);
 
     // or: wake on button press (only works once because I haven't figured out how to use rtc_gpio_deinit)
     // lowpower.deepSleepExt0(button,0);
